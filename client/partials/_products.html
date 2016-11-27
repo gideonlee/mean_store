@@ -1,0 +1,30 @@
+<div class='header'>
+	<a href='#/'>Dashboard</a> | Products | <a href='#/orders'>Orders</a> | <a href='#/customers'>Customers</a> | <a href='#/settings'>Settings</a>
+</div>
+
+<div class='products'>
+	<div class='inline addProduct'>
+		<input name='filter' type='text' placeholder='Search item...' ng-model='productFilter.name'>
+
+		<h3>Add a new Product</h3>
+		<form>
+			<label>Name:</label>
+			<input type='text' ng-model='product.name'>
+			<label>Image (url):</label>
+			<input type='text' ng-model='product.url'>
+			<label>Description:</label>
+			
+			<input type='text' ng-model='product.description'>
+			<label>Quantity:</label>
+			<input type='number' ng-model='product.quantity'>
+			<input class='btn btn-default' type='submit' value='Add Product' ng-click='create()'>
+		</form>
+	</div>
+	<div class='inline productsList'>
+		<div class='inline' ng-repeat='product in products'>
+			<img src='{{product.url}}'>
+			<p>{{product.name}}</p>
+			<p>{{product.quantity}} left</p>
+		</div>
+	</div>
+</div>

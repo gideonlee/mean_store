@@ -1,0 +1,26 @@
+<div class='header'>
+	Dashboard | <a href='#/products'>Products</a> | <a href='#/orders'>Orders</a> | <a href='#/customers'>Customers</a> | <a href='#/settings'>Settings</a>
+</div>
+
+<div class='dashboard'>
+	<div class='filter'>
+		<input type='text' placeholder='Search...' ng-model='filterProduct'>
+	</div>
+
+	<div class='inline products' ng-repeat='product in products | filter: filterProduct'>
+		<img src='{{product.url}}'>
+		<p>{{product.name}}</p>
+		<p>({{product.quantity}} left)</p>
+	</div>
+	<a class='centered' href='#/products'>Show More...</a>
+	
+	<div class='recentOrders' ng-repeat='order in orders'>
+		<p>{{order._customer.name}} purchased {{order._product.name}} ... </p>
+	</div>
+	<a class='centered' href='#/orders'>Show all Orders...</a>
+
+	<div class='newCustomers' ng-repeat='customer in customers'>
+		<p>{{customer.name}} joined the store.</p>
+	</div>
+	<a class='centered' href='#/customers'>Show all Customers...</a>
+</div>

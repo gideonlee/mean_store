@@ -1,0 +1,110 @@
+* {
+	margin: 0 auto;
+}
+	.inline {
+		display: inline-block;
+		vertical-align: top;
+	}
+/* CUSTOMERS */
+	div.customers h3 {
+		margin-top: 30px;	
+	}
+		form.addCustomer {
+			margin-bottom: 20px;
+		}
+	div.customers .flash {
+		height: 45px;
+	}
+	div.customers .filter {
+		margin-top: 20px;
+		text-align: right;
+	}
+/* PRODUCTS */
+	div.products div.addProduct {
+		width: 270px;
+	}
+		div.products input[name=filter] {
+			margin-top: 30px;
+			margin-left: 10px;
+			width: 250px;
+		}
+		div.addProduct h3 {
+			margin-left: 30px;
+		}
+			div.addProduct form input {
+				margin-top: 15px;
+			}
+		div.products form {
+			text-align: right;
+		}
+	div.products div.productsList {
+		margin-left: 20px;
+	}	
+		div.productsList {
+			margin-top: 30px;
+		}
+			div.productsList div {
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			div.productsList img {
+				width: 150px;
+				height: 150px;
+			}
+			div.productsList p {
+				text-align: center;
+				margin: 0 auto;
+				padding: 0;
+			}	
+/* ORDERS */
+	div.orders .orderName {
+		width: 288px;
+	}
+	div.orders .orderProduct {
+		width: 200px;
+	}
+	div.orders form .block {
+		display: block;
+	}
+	div.orders input[type=number] {
+		width: 50px;
+	}
+	div.orders input[type=submit] {
+		display: block;
+		margin-left: 300px;
+	}
+	div.orders .filter input {
+		margin-top: 20px;
+		float: right;
+	}
+	div.orders .flash {
+		height: 45px;
+	}
+
+/* DASHBOARD */
+	div.dashboard .filter {
+		margin-top: 20px;
+	}
+	div.dashboard div.products {
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+		div.dashboard div.products img {
+			width: 150px;
+			height: 150px;
+		}
+		div.products p {
+			text-align: center;
+		}
+	div.dashboard .centered {
+		display: block;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+		div.recentOrders p {
+			margin-left: 250px;
+		}
+		div.newCustomers p {
+			margin-left: 250px;
+		}

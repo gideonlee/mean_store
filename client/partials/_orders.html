@@ -1,0 +1,51 @@
+<div class='header'>
+	<a href='#/'>Dashboard</a> | <a href='#/products'>Products</a> | Orders | <a href='#/customers'>Customers</a> | <a href='#/settings'>Settings</a>
+</div>
+
+<div class='orders'>
+	<h3>Add a new order</h3>
+	<form>
+		<div class='block'>
+			<label>Customer:</label>
+			<select class='orderName' ng-model='order.customer'>
+				<option ng-repeat='customer in customers'>{{customer.name}}</option>
+			</select>			
+		</div>
+		<label>Order:</label>
+		<input type='number' ng-model='order.quantity'>
+		<label>Product:</label>
+		<select class='orderProduct' ng-model='order.product'>
+			<option ng-repeat='product in products'>{{product.name}}</option>
+		</select>
+		<div>
+			<input class='btn btn-default' type='submit' value='Order' ng-click='createOrder()'>		
+		</div>
+	</form>
+
+	<div class='flash'>
+		<flash-message duration='3000'></flash-message>		
+	</div>
+
+	<div class='filter'>
+		<input type='text' ng-model='filterOrders' placeholder='Filter...'>
+	</div>
+
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Customer Name</th>
+				<th>Product</th>
+				<th>Quantity</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='order in orders | filter: filterOrders'>
+				<td>{{order._customer.name}}</td>
+				<td>{{order._product.name}}</td>
+				<td>{{order.quantity}}</td>
+				<td>{{order.createdAt.substring(5, 7)}}/{{order.createdAt.substring(8, 10)}}/{{order.createdAt.substring(0, 4)}}</td>
+			</tr>			
+		</tbody>
+	</table>
+</div>

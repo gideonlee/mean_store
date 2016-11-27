@@ -1,0 +1,41 @@
+<div class='header'>
+	<a href='#/'>Dashboard</a> | <a href='#/products'>Products</a> | <a href='#/orders'>Orders</a> | Customers | <a href='#/settings'>Settings</a>
+</div>
+
+<div class='customers'>
+	<h3>Add a new customer</h3>
+	<form class='addCustomer'>
+		<label>Customer Name: </label>
+		<input type='text' ng-model='customer.name'>
+		<input class='btn btn-default' type='submit' value='Add' ng-click='create()'>
+	</form>
+
+	<div class='flash'>
+		<flash-message duration='3000'></flash-message>		
+	</div>
+
+	<div class='filter'>
+		<input type='text' placeholder='Search Name...' ng-model='namesFilter.name'>	
+	</div>
+
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Customer Name</th>
+				<th>Created Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='customer in customers | filter: namesFilter'>
+				<td>{{customer.name}}</td>
+				<td>{{customer.createdAt.substring(5, 7)}}/{{customer.createdAt.substring(8, 10)}}/{{customer.createdAt.substring(0, 4)}}</td>
+				<td>
+					<form>
+						<input class='btn btn-danger' type='submit' value='Remove' ng-click='remove(customer._id)'>	
+					</form>
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
